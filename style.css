@@ -1,0 +1,100 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+h1 {
+    color: #cccccc;
+}
+
+#file-tree-root ul {
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#file-tree-root li {
+    padding: 2px 0;
+}
+
+.item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 3px 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.item:hover {
+    background-color: #2a2d2e;
+}
+
+.item i {
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+    font-style: normal;
+    color: #c5c5c5;
+}
+
+/* Ẩn các thư mục con mặc định */
+.folder > ul {
+    display: none;
+}
+
+/* Hiển thị thư mục con khi có class "open" */
+.folder.open > ul {
+    display: block;
+}
+
+/* Icon cho thư mục */
+.folder > .item > .icon-folder::before {
+    content: "▸";
+    display: inline-block;
+    transition: transform 0.1s ease-in-out;
+}
+
+.folder.open > .item > .icon-folder::before {
+    transform: rotate(90deg);
+}
+
+/* Icon cho tệp tin */
+.file > .item > .icon-file::before {
+    content: "📄";
+    opacity: 0.8;
+}
+
+/* Icon cho file JavaScript */
+.file > .item > .icon-file--js::before {
+    content: "JS";
+    color: #f7df1e;
+    background-color: #000;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 1px 2px;
+    border-radius: 2px;
+    line-height: 1.25;
+    opacity: 1;
+}
+
+/* Icon cho file HTML */
+.file > .item > .icon-file--html::before {
+    content: "🌐";
+    color: #e34f26;
+    opacity: 1;
+}
+
+/* Icon cho file JSON */
+.file > .item > .icon-file--json::before {
+    content: "📦";
+    opacity: 1;
+}
+
+/* Icon cho file Markdown */
+.file > .item > .icon-file--md::before {
+    content: "📝";
+}
